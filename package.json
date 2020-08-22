@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "serve1": "nodemon index.js",
-    "serve2": "cd frontend && ng serve",
+    "serve2": "cd frontend && ng serve"
   },
   "author": "BR20-2",
   "license": "MIT",
