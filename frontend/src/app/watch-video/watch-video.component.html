@@ -1,0 +1,18 @@
+<div *ngIf="!error">
+  <video src="{{ getVideoPath() }}" controls autoplay width="100%"></video>
+
+  <a href="/" class="btn btn-block btn-secondary">Back</a>
+</div>
+
+<div *ngIf="error" class="card text-center">
+  <div class="card-body">
+    <h5 class="card-title">
+      {{ feedback }}
+    </h5>
+    <p class="card-text">
+      {{ feedback }}
+      Please return to index page.
+    </p>
+    <a href="/" class="btn btn-block btn-primary">Back</a>
+  </div>
+</div>

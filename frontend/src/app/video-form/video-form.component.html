@@ -1,0 +1,73 @@
+<div
+  *ngIf="error || success"
+  class="text-center alert"
+  [ngClass]="{ 'alert-danger': error, 'alert-success': success }"
+  role="alert"
+>
+  {{ feedback }}
+</div>
+
+<form
+  [formGroup]="videoForm"
+  (ngSubmit)="onSubmit()"
+  action="/video/create"
+  method="post"
+  enctype="multipart/form-data"
+>
+  <div class="form-group">
+    <input
+      [ngClass]="{
+        'is-invalid': videoForm.controls.title.invalid && videoForm.touched
+      }"
+      class="form-control"
+      formControlName="title"
+      name="title"
+      placeholder="Title"
+      required
+      type="text"
+    />
+  </div>
+
+  <div class="form-group">
+    <textarea
+      [ngClass]="{
+        'is-invalid':
+          videoForm.controls.description.invalid && videoForm.touched
+      }"
+      class="form-control"
+      formControlName="description"
+      name="description"
+      placeholder="Description"
+      required
+      rows="10"
+    ></textarea>
+  </div>
+
+  <div class="form-group">
+    <input
+      type="file"
+      name="file"
+      (change)="videoForm.controls.file.setValue($event.target['files'][0])"
+    />
+  </div>
+
+  <div class="form-group">
+    <button type="submit" class="btn btn-block btn-primary">Submit</button>
+  </div>
+</form>
+
+<div *ngFor="let video of videos" class="card my-3 shadow-sm">
+  <div class="card-body">
+    <h5 class="card-title">
+      <a href="/video/{{ video.id }}">
+        {{ video.title }}
+      </a>
+    </h5>
+    <p class="card-text" style="white-space: pre;">
+      {{ video.description }}
+    </p>
+    <button class="btn btn-danger" (click)="deleteVideo(video.id)">
+      Delete
+    </button>
+  </div>
+</div>

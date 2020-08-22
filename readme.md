@@ -8,10 +8,11 @@ This project is designed to be run locally.
 
 ## How2Run
 
-1. Run `npm install` or `yarn`
-2. Open XAMPP
-3. Start MySQL
-4. Make sure database 'test' is available
-5. Run `npm run serve1` or `yarn serve1`
-6. Run `npm run serve2` or `yarn serve2`
-7. Visit http://localhost:4200 from browser
+1. Run `npm install` or `yarn` in this directory
+2. Run `npm install` or `yarn` in frontend directory
+3. Open XAMPP
+4. Start MySQL
+5. Make sure database 'test' is available
+6. Run `npm run serve1` or `yarn serve1`
+7. Run `npm run serve2` or `yarn serve2`
+8. Visit http://localhost:4200 from browser
